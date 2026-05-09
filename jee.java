@@ -1,29 +1,28 @@
 import java.util.Scanner;
 
-public class Main {
-    public static void main(String[] args) {
-
-        Scanner sc = new Scanner(System.in);
-
-        int N = sc.nextInt();
-
-        int count = 0;   // ✅ must be here (global inside main)
-
-        int prev = sc.nextInt();
-
-        for (int i = 1; i < N; i++) {
-
-            int current = sc.nextInt();
-
-            if (current < prev) {
-                count++;
-            }
-
-            prev = current;
+class jee{
+    public static void main(String [] args){
+        //int t;
+        Scanner in=new Scanner(System.in);
+        System.out.print("Enter the number of elements in the array :");
+        int n= in.nextInt();
+        System.out.println("\nEnter the " + n +" elements :");
+        int arr[]=new int[n];
+        for(int a=0;a<n;a++){
+            arr[a]=in.nextInt();
         }
+        //int arr[]={4, 3, 7, 2, 6, 1};
+        int s=arr[0];
+        int c=0;
+       
+        for(int i: arr){
+            if(i<s){
+                s=i;
+                c++;
 
-        System.out.println(count);
+            }
+        }
+        System.out.println(""+c);
 
-        sc.close();
     }
 }
